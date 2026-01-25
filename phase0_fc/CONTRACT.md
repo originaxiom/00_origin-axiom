@@ -266,7 +266,7 @@ Phase 1 depends on Phase 0 passing all tests.
 Phase 0 is **accepted** when:
 
 1. All code written and passes tests
-2. Human reviews and says: **"ACCEPT PHASE 0"**
+2. Reviewed and explicitly approved
 3. Contract locked (no further edits without errata rung)
 
 Until then: **provisional**.

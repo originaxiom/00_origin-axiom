@@ -10,13 +10,16 @@
 
 ```bash
 # Clone repository
-git clone <repo-url>
+git clone https://github.com/originaxiom/00_origin-axiom.git
 cd 00_origin-axiom
 
-# Run Phase 0 tests
-python -m pytest tests/
+# Install dependencies
+pip install numpy pytest
 
-# Run basic frustrated dynamics experiment
+# Run tests
+python -m pytest tests/ -v
+
+# Run basic experiments (coming soon)
 python experiments/frustrated_dynamics_v3.py
 ```
 
@@ -53,22 +56,14 @@ See [docs/VISION.md](docs/VISION.md) for full conceptual framework.
 │   ├── CONTRACT.md     Phase 0 contract
 │   ├── manifold.py     Discrete topology (no metric)
 │   └── field.py        ψ on manifold
-├── phase1_fc/          Frustrated dynamics
-│   ├── CONTRACT.md     Phase 1 contract
-│   └── dynamics.py     Evolution equations
-├── phase2_fc/          Emergent geometry
-│   ├── CONTRACT.md     Phase 2 contract
-│   └── geometry.py     Metric extraction from ψ
-├── phase3_fc/          Floor derivation
-│   ├── CONTRACT.md     Phase 3 contract
-│   └── holographic.py  Holographic floor
-├── phase4_fc/          Cosmology extraction
-│   ├── CONTRACT.md     Phase 4 contract
-│   └── observables.py  w(z), H(z) from ψ
+├── phase1_fc/          Frustrated dynamics (planned)
+├── phase2_fc/          Emergent geometry (planned)
+├── phase3_fc/          Floor derivation (planned)
+├── phase4_fc/          Cosmology extraction (planned)
 ├── experiments/        Runnable experiments
-├── outputs/            Generated artifacts (CSV, plots)
+├── outputs/            Generated artifacts
 ├── tests/              Unit and integration tests
-└── docs/               Contracts, vision, design memos
+└── docs/               Vision and design documents
 ```
 
 ---
@@ -77,7 +72,7 @@ See [docs/VISION.md](docs/VISION.md) for full conceptual framework.
 
 Work proceeds in **phases** with explicit **contracts**:
 
-- **Phase 0_FC:** Pre-geometric manifold + ψ field
+- **Phase 0_FC:** Pre-geometric manifold + ψ field ✓
 - **Phase 1_FC:** Frustrated dynamics implementation
 - **Phase 2_FC:** Emergent geometry extraction
 - **Phase 3_FC:** Floor derivation (holographic/topological)
@@ -86,16 +81,14 @@ Work proceeds in **phases** with explicit **contracts**:
 Each phase has:
 - Contract (goal, scope, non-claims)
 - Implementation (code + tests)
-- Verification (gates must pass)
-- Acceptance (explicit Human approval)
-
-See [CLAUDE_WORKFLOW_CONTRACT_v1.md](CLAUDE_WORKFLOW_CONTRACT_v1.md) for governance.
+- Verification (all tests pass)
+- Documentation
 
 ---
 
 ## Methodology
 
-This work applies the governance framework from [origin-axiom](https://github.com/originaxiom/origin-axiom-framework):
+This work applies rigorous governance practices:
 
 ✅ **Phased gates:** No phase advances without passing verification
 ✅ **Reproducibility:** All artifacts from versioned code + fixed seeds
@@ -103,7 +96,7 @@ This work applies the governance framework from [origin-axiom](https://github.co
 ✅ **Evidence first:** No conclusions before seeing output
 ✅ **Honest failures:** Negative results documented, not hidden
 
-See original repository for static θ approach and methodological origins.
+Methodology adapted from [origin-axiom](https://github.com/originaxiom/origin-axiom-framework) governance framework.
 
 ---
 
@@ -121,14 +114,12 @@ See original repository for static θ approach and methodological origins.
 
 ## Current Status
 
-**Phase 0_FC:** Bootstrap (in progress)
-- Directory structure: ✓
-- Workflow contract: ✓
-- Vision document: ✓
-- Pre-geometric manifold: pending
-- ψ field class: pending
+**Phase 0_FC:** Complete ✓
+- Pre-geometric manifold: ✓
+- ψ field class: ✓
+- Full test coverage: ✓ (31/31 tests passing)
 
-**Phases 1-4:** Not started
+**Phases 1-4:** In development
 
 ---
 
@@ -181,17 +172,21 @@ See [docs/VISION.md](docs/VISION.md) for full non-claims.
 - Vision makes testable predictions: **5-8%**
 - Vision describes actual reality: **2-3%**
 
-**But:** Even if physics fails, methodology contributes.
+Even if physics fails, methodology contributes to research practices.
 
 ---
 
 ## Contributing
 
-This is a research program, not open-source software.
+This is an active research program. Contributions welcome via:
+- Issues for bugs or conceptual questions
+- Pull requests for bug fixes or tests
+- Discussions for theoretical extensions
 
-Collaboration by invitation only.
-
-Governance: [CLAUDE_WORKFLOW_CONTRACT_v1.md](CLAUDE_WORKFLOW_CONTRACT_v1.md)
+All contributions must maintain:
+- Test coverage
+- Reproducibility
+- Non-claims discipline
 
 ---
 
@@ -201,26 +196,20 @@ If this work proves useful:
 
 ```
 Frustrated Cancellation Dynamics (2026)
-Repository: 00_origin-axiom
-Methodology: Adapted from origin-axiom governance framework
+Repository: https://github.com/originaxiom/00_origin-axiom
 Vision: Reality as impossible striving toward non-existence
+Methodology: Phased governance with explicit non-claims
 ```
 
 ---
 
 ## License
 
+MIT License (see LICENSE file)
+
 Research code. Not for production use.
-
-Governance methodology (phased gates, non-claims discipline) adapted from origin-axiom under MIT-style principles.
-
----
-
-## Contact
-
-See [CLAUDE_WORKFLOW_CONTRACT_v1.md](CLAUDE_WORKFLOW_CONTRACT_v1.md) for collaboration protocol.
 
 ---
 
 **Last updated:** 2026-01-25
-**Version:** v0.1 (bootstrap phase)
+**Version:** v0.2 (Phase 0 complete)

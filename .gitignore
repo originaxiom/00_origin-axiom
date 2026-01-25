@@ -55,3 +55,7 @@ Thumbs.db
 *.tmp
 *.bak
 *.log
+
+# Internal workflow documents (not for public repo)
+CLAUDE_WORKFLOW_CONTRACT_v1.md
+*_WORKFLOW_CONTRACT*.md
