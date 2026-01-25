@@ -182,7 +182,7 @@ This is analogous to:
 ### Why Complex ψ?
 
 **Phase θ encodes:**
-- Twist (related to θ* parameter)
+- Twist (complex phase structure)
 - Rotation (potential source of drive)
 - Interference (cancellation structure)
 
@@ -253,7 +253,7 @@ Physics claims begin in Phase 1 (if at all).
 Will add:
 - Evolution equations: ∂ψ/∂τ = ...
 - Cancellation tendency: -Γ[ψ]
-- Anti-cancel drive: +Drive[ψ, θ*]
+- Anti-cancel drive: +Drive[ψ]
 - Floor enforcement: |ψ| ≥ ε
 - Energy from striving: E ~ |∂ψ/∂τ|²
 

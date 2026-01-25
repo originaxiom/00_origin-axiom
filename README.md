@@ -72,7 +72,7 @@ See [docs/VISION.md](docs/VISION.md) for full conceptual framework.
 
 Work proceeds in **phases** with explicit **contracts**:
 
-- **Phase 0_FC:** Pre-geometric manifold + ψ field ✓
+- **Phase 0_FC:** Pre-geometric manifold + ψ field (complete)
 - **Phase 1_FC:** Frustrated dynamics implementation
 - **Phase 2_FC:** Emergent geometry extraction
 - **Phase 3_FC:** Floor derivation (holographic/topological)
@@ -90,20 +90,20 @@ Each phase has:
 
 This work applies rigorous governance practices:
 
-✅ **Phased gates:** No phase advances without passing verification
-✅ **Reproducibility:** All artifacts from versioned code + fixed seeds
-✅ **Non-claims discipline:** Explicit "what we do NOT claim"
-✅ **Evidence first:** No conclusions before seeing output
-✅ **Honest failures:** Negative results documented, not hidden
+- **Phased gates:** No phase advances without passing verification
+- **Reproducibility:** All artifacts from versioned code + fixed seeds
+- **Non-claims discipline:** Explicit "what we do NOT claim"
+- **Evidence first:** No conclusions before seeing output
+- **Honest failures:** Negative results documented, not hidden
 
-Methodology adapted from [origin-axiom](https://github.com/originaxiom/origin-axiom-framework) governance framework.
+Methodology adapted from [origin-axiom-framework](https://github.com/originaxiom/origin-axiom-framework) repository.
 
 ---
 
-## Key Differences from Origin-Axiom
+## Key Differences from origin-axiom-framework
 
-| Aspect | Origin-Axiom | 00_origin-axiom |
-|--------|--------------|-----------------|
+| Aspect | origin-axiom-framework | 00_origin-axiom |
+|--------|------------------------|-----------------|
 | **Core Object** | Static θ parameter | Dynamic ψ field |
 | **Spacetime** | Assumed FRW metric | Emergent from ψ |
 | **Floor** | Imposed constraint | To be derived |
@@ -114,10 +114,10 @@ Methodology adapted from [origin-axiom](https://github.com/originaxiom/origin-ax
 
 ## Current Status
 
-**Phase 0_FC:** Complete ✓
-- Pre-geometric manifold: ✓
-- ψ field class: ✓
-- Full test coverage: ✓ (31/31 tests passing)
+**Phase 0_FC:** Complete
+- Pre-geometric manifold
+- ψ field class
+- Full test coverage (31/31 tests passing)
 
 **Phases 1-4:** In development
 
@@ -148,19 +148,19 @@ See [docs/VISION.md](docs/VISION.md) for full non-claims.
 ## Success Criteria
 
 **Near-term (would show promise):**
-- ✓ Floor activity 5-20% (not frozen, not trivial)
-- ✓ Emergent geometry recovers 3D structure
-- ✓ Holographic floor ~ empirical floor
+- Floor activity 5-20% (not frozen, not trivial)
+- Emergent geometry recovers 3D structure
+- Holographic floor matches empirical floor (order of magnitude)
 
 **Medium-term (would show viability):**
-- ✓ w(θ* ≈ 2.178) ≈ -0.83 (DESI value)
-- ✓ Energy density positive, stable
-- ✓ One observable matches data
+- Equation of state w(z) matches DESI observations
+- Energy density positive and stable
+- At least one observable prediction matches data
 
 **Long-term (would be revolutionary):**
-- ✓ Derive Λ ~ 10^{-120} from floor
-- ✓ Explain Hubble tension from θ* evolution
-- ✓ Particle excitations emerge from ψ
+- Derive Λ ~ 10^{-120} from floor dynamics
+- Explain Hubble tension from vacuum evolution
+- Particle excitations emerge from ψ
 
 ---
 

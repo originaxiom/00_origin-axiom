@@ -26,9 +26,9 @@ Like an Euler identity that can't cancel perfectly:
 
 **Standard:** e^{iπ} + 1 = 0 (perfect cancellation)
 
-**Ours:** e^{iθ*·i} + 1 ≠ 0 for finite θ*
+**Ours:** e^{iθ·i} + 1 ≠ 0 for finite θ
 
-The imaginary twist (i·i) becomes real decay (e^{-θ*}), forcing real amplitude from imaginary structure. As θ* → ∞, the system would reach zero, but the axiom bounds θ*, preventing completion.
+The imaginary twist (i·i) becomes real decay (e^{-θ}), forcing real amplitude from imaginary structure. As θ → ∞, the system would reach zero, but a constraint bounds θ, preventing completion.
 
 The residue is reality.
 
@@ -121,7 +121,7 @@ To turn this vision into rigorous physics, we must:
 
 3. **Derive the drive**
    - What opposes cancellation?
-   - θ* twist? Self-interaction? Boundary pressure?
+   - Phase twist? Self-interaction? Boundary pressure?
 
 4. **Show emergence**
    - Metric from ψ correlations
@@ -143,15 +143,15 @@ We explicitly do **not** claim:
 - That the floor can be derived from known principles
 - That spacetime emergence has been demonstrated
 - That any observable predictions have been calculated
-- That θ* has physical meaning
+- That any particular phase parameter value has physical meaning
 
 These are **targets**, not achievements.
 
 ---
 
-## Relationship to Origin-Axiom
+## Relationship to origin-axiom-framework
 
-This work applies the governance methodology developed in [origin-axiom](https://github.com/originaxiom/origin-axiom-framework) to a different foundational approach.
+This work applies the governance methodology developed in the [origin-axiom-framework repository](https://github.com/originaxiom/origin-axiom-framework) to a different foundational approach.
 
 **We import:**
 - Phased governance structure
