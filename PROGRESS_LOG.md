@@ -311,6 +311,7 @@
 ## Commit History
 
 ```
+[pending] Phase 5_FC: Implement emergent drive
 7e31139 Phase 4_FC: Implement emergent time and causality
 4925ce7 Phase 3_FC: Formal acceptance milestone
 e547d31 Phase 3_FC: Implement floor derivation from fundamental constraints
@@ -328,16 +329,17 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 
 ## Test Suite Status
 
-**Current:** 152/152 passing
+**Current:** 169/169 passing
 - Phase 0: 31 tests
 - Phase 1: 23 tests
 - Phase 2: 33 tests
 - Phase 3: 32 tests
 - Phase 4: 33 tests
-- Coverage: manifold, field, dynamics, geometry, floor derivation, emergent time, full integration
+- Phase 5: 17 tests
+- Coverage: manifold, field, dynamics, geometry, floor derivation, emergent time, emergent drive, full integration
 - All reproducible with fixed seeds
 
-**Last verified:** 2026-01-26 (Phase 4 complete)
+**Last verified:** 2026-01-26 (Phase 5 complete)
 
 ---
 
@@ -351,3 +353,68 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 **Log maintained by:** Claude (per Workflow Contract)
 **Last updated:** 2026-01-26
 **Format:** Chronological, binding record of completed work
+
+### Phase 5_FC: Emergent Drive
+
+**Action:** Derived anti-cancellation drive from floor constraint
+**Who:** Claude
+**Approved:** [Pending Human ACCEPT]
+**Date:** 2026-01-26
+
+**Files created:**
+- `phase5_fc/CONTRACT.md` (~580 lines) — Phase 5 specification
+- `phase5_fc/drive.py` (340 lines) — EmergentDrive class
+- `phase5_fc/RESULTS.md` (216 lines) — Numerical results and findings
+- `phase5_fc/__init__.py` — Package interface
+- `tests/test_phase5_complete.py` (450+ lines, 17 tests)
+- `experiments/phase5_acceptance_test.py` — Reproducible acceptance test
+
+**Core implementation:**
+- Constraint evaluation: C = |∫ψ| - ε
+- Lagrange multiplier: λ = K/(C + δ) (feedback control)
+- Emergent drive: D = λ · direction
+- Self-sustaining evolution with D_emergent(ψ,ε)
+- Comparison with imposed drive (Phase 1)
+
+**Test results:**
+- 169/169 tests passing (152 + 17 new Phase 5 tests)
+- No failures
+
+**Observed results (seed=20260126, N=64, 100 steps):**
+- Final constraint: C = 0.042 (>0 maintained ✓)
+- Mean λ = 3.72, Max λ = 22.55 (bounded ✓)
+- Mean drive amplitude = 0.058
+- Mean energy = 3.15 (emergent) vs 3.16 (imposed) — ratio 1.00
+- Drive ratio = 0.58 (more efficient than imposed)
+- Floor violations = 0 (0% ✓)
+- Self-sustaining: True ✓
+
+**Key finding:**
+> The anti-cancellation drive emerges from the floor constraint itself via Lagrange
+> multiplier feedback. The impossibility (floor) generates the resistance (drive).
+> This completes self-bootstrapping: Floor (Ph3) → Drive (Ph5) → Striving → Sustained floor.
+> No external energy input required.
+
+**Commit:** [To be filled] — Phase 5_FC: Implement emergent drive
+
+**Status:** ✓ Code complete, tests passing, evidence documented
+**Acceptance:** Awaiting Human ACCEPT
+
+---
+
+## Self-Bootstrapping Complete
+
+The framework is now fully self-contained. Everything emerges:
+
+| Phase | What Emerges | From What | Status |
+|-------|--------------|-----------|---------|
+| Phase 3 | Floor ε | Holography + topology | ✓ ACCEPTED |
+| Phase 4 | Time dt | Striving rate | Awaiting |
+| Phase 5 | Drive D | Floor constraint | Awaiting |
+
+**Remaining imposed:**
+- Initial conditions ψ(τ=0)
+- Parameters γ, ω, K
+- Topology (manifold structure)
+
+---
