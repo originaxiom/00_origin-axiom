@@ -289,7 +289,7 @@
 > cancellation attempt". Time = striving. Faster striving → faster time passage.
 > This completes the emergence trilogy: space (Phase 2), floor (Phase 3), time (Phase 4).
 
-**Commit:** [To be filled] — Phase 4_FC: Implement emergent time
+**Commit:** `7e31139` — Phase 4_FC: Implement emergent time and causality
 
 **Status:** ✓ Code complete, tests passing, evidence documented
 **Acceptance:** Awaiting Human ACCEPT
@@ -311,7 +311,7 @@
 ## Commit History
 
 ```
-[pending] Phase 4_FC: Implement emergent time and causality
+7e31139 Phase 4_FC: Implement emergent time and causality
 4925ce7 Phase 3_FC: Formal acceptance milestone
 e547d31 Phase 3_FC: Implement floor derivation from fundamental constraints
 543ce21 Phase 2_FC: Implement emergent geometry
