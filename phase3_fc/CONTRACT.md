@@ -1,8 +1,9 @@
 # Phase 3_FC Contract: Floor Derivation
 
-**Status:** ACTIVE
+**Status:** ✓ ACCEPTED
 **Version:** v1.0
 **Date:** 2026-01-26
+**Accepted:** 2026-01-26
 
 ---
 
