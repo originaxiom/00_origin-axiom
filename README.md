@@ -1,8 +1,10 @@
 # 00_origin-axiom: Frustrated Cancellation Dynamics
 
-**Status:** Active research program (formalization stage)
+**Status:** Research Complete - Framework Evaluated (2026-01-26)
 
 **Vision:** Reality as perpetual impossible attempt to not-exist, with the impossibility itself generating existence, energy, time, and space.
+
+**Verdict:** Framework is mathematically coherent and internally self-consistent, but produces wrong cosmology (w = +1/3 instead of w ≈ -1). Research concluded after definitive observational mismatch in Phase 6. **See [FRUSTRATED_CANCELLATION_FINDINGS.md](FRUSTRATED_CANCELLATION_FINDINGS.md) for complete assessment.**
 
 ---
 
@@ -114,32 +116,41 @@ Methodology adapted from [origin-axiom-framework](https://github.com/originaxiom
 
 ## Current Status
 
-**Phase 0_FC:** Complete
-- Pre-geometric manifold
-- ψ field class
-- Full test coverage (31/31 tests passing)
+**All Phases Complete (0-6):**
+- Phase 0: Pre-geometric foundation ✓
+- Phase 1: Frustrated dynamics ✓ ACCEPTED
+- Phase 2: Emergent geometry ✓
+- Phase 3: Floor derivation ✓ ACCEPTED
+- Phase 4: Emergent time ✓ ACCEPTED
+- Phase 5: Emergent drive ✓ ACCEPTED
+- Phase 6: Cosmological observables ✓ ACCEPTED
 
-**Phases 1-4:** In development
+**Test Suite:** 204/204 tests passing
+**Reproducibility:** Full (fixed seeds, versioned artifacts)
+
+**Critical Finding:** Framework yields w = +1/3 (radiation-like), not w ≈ -1 (dark energy). This is a structural consequence of kinetic-only energy, not a parameter tuning problem. **Research program concluded.**
 
 ---
 
-## What We Claim
+## What We Can Claim (Final Assessment)
 
-**Definitively:**
-- This vision is **articulable** (can be written in math)
-- This vision is **novel** (ontological inversion)
-- This vision is **testable** (produces concrete implementations)
+**Achieved ✓:**
+- Framework is **articulable** (precise mathematical formulation)
+- Framework is **implementable** (204 tests passing, full reproducibility)
+- Framework is **internally consistent** (floor, time, drive all emerge)
+- Observable extraction **works** (can compute H, a, w, ρ)
+- Methodology is **rigorous** (phase gates, non-claims discipline, honest failures)
 
-**Provisionally:**
-- Frustrated dynamics may be **implementable**
-- Geometry may be **extractable**
-- Floor may be **derivable**
+**Failed ✗:**
+- **Does NOT describe actual universe** (w = +1/3 ≠ w_observed ≈ -1)
+- **Does NOT explain dark energy** (predicts radiation-like, not Λ-like)
+- **Does NOT match observations** (45σ discrepancy from DESI/Planck)
+- **Does NOT solve CC problem** (no connection to Λ ~ 10^{-120})
 
-**Not Yet:**
-- Vision describes actual universe
-- Observable predictions match data
-- Spacetime emergence works
-- Floor connects to Λ ~ 10^{-120}
+**Value Created:**
+- Methodological template for rigorous speculative research
+- Clear negative result (kinetic-only field → w = +1/3, not dark energy)
+- Demonstration of intellectual honesty in physics
 
 See [docs/VISION.md](docs/VISION.md) for full non-claims.
 
@@ -164,15 +175,16 @@ See [docs/VISION.md](docs/VISION.md) for full non-claims.
 
 ---
 
-## Honest Assessment
+## Honest Assessment (Final)
 
-**Probability estimates** (subjective, current):
-- Vision provides theoretical insight: **20-25%**
-- Vision becomes rigorous framework: **10-15%**
-- Vision makes testable predictions: **5-8%**
-- Vision describes actual reality: **2-3%**
+**Probability estimates** (updated after Phase 6):
+- Framework provides theoretical insight: **15-20%** (negative result is insight)
+- Framework becomes rigorous: **ACHIEVED** ✓ (204 tests, full documentation)
+- Framework makes testable predictions: **ACHIEVED** ✓ (w = +1/3, testably wrong)
+- Framework describes actual reality: **<1%** ↓↓ (observational contradiction)
+- Methodology has lasting value: **80-90%** ↑ (governance approach is exemplary)
 
-Even if physics fails, methodology contributes to research practices.
+**The framework failed as physics but succeeded as methodology.**
 
 ---
 
@@ -211,5 +223,15 @@ Research code. Not for production use.
 
 ---
 
-**Last updated:** 2026-01-25
-**Version:** v0.2 (Phase 0 complete)
+**Last updated:** 2026-01-26
+**Version:** v1.0 (Phases 0-6 complete, research concluded)
+
+---
+
+## Research Conclusion
+
+This repository represents a complete research program from formulation through testing. The frustrated cancellation framework was rigorously implemented, tested (204 passing tests), and evaluated against observations. The verdict is clear: **the framework is mathematically coherent but physically incompatible with observed cosmology**.
+
+This is honest science. We built it, tested it, found it wrong, and documented the failure clearly. The methodological approach—phase gates, contracts, reproducibility, explicit non-claims—proved valuable independent of the physics outcome.
+
+For complete findings, see [FRUSTRATED_CANCELLATION_FINDINGS.md](FRUSTRATED_CANCELLATION_FINDINGS.md).
