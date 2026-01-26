@@ -1,8 +1,9 @@
 # Phase 5_FC Contract: Emergent Drive
 
-**Status:** ACTIVE
+**Status:** ✓ ACCEPTED
 **Version:** v1.0
 **Date:** 2026-01-26
+**Accepted:** 2026-01-26
 
 ---
 

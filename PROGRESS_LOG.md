@@ -252,7 +252,7 @@
 
 **Action:** Derived physical time from frustrated cancellation dynamics
 **Who:** Claude
-**Approved:** [Pending Human ACCEPT]
+**Approved:** ✓ ACCEPTED (2026-01-26)
 **Date:** 2026-01-26
 
 **Files created:**
@@ -291,8 +291,8 @@
 
 **Commit:** `7e31139` — Phase 4_FC: Implement emergent time and causality
 
-**Status:** ✓ Code complete, tests passing, evidence documented
-**Acceptance:** Awaiting Human ACCEPT
+**Status:** ✓ ACCEPTED (2026-01-26)
+**Acceptance:** Human accepted all criteria
 
 ---
 
@@ -311,7 +311,8 @@
 ## Commit History
 
 ```
-[pending] Phase 5_FC: Implement emergent drive
+09e14b9 Phase 5_FC: Implement emergent drive from floor constraint
+9f48eb3 Update PROGRESS_LOG.md with Phase 4 commit hash
 7e31139 Phase 4_FC: Implement emergent time and causality
 4925ce7 Phase 3_FC: Formal acceptance milestone
 e547d31 Phase 3_FC: Implement floor derivation from fundamental constraints
@@ -358,7 +359,7 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 
 **Action:** Derived anti-cancellation drive from floor constraint
 **Who:** Claude
-**Approved:** [Pending Human ACCEPT]
+**Approved:** ✓ ACCEPTED (2026-01-26)
 **Date:** 2026-01-26
 
 **Files created:**
@@ -395,10 +396,10 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 > This completes self-bootstrapping: Floor (Ph3) → Drive (Ph5) → Striving → Sustained floor.
 > No external energy input required.
 
-**Commit:** [To be filled] — Phase 5_FC: Implement emergent drive
+**Commit:** `09e14b9` — Phase 5_FC: Implement emergent drive
 
-**Status:** ✓ Code complete, tests passing, evidence documented
-**Acceptance:** Awaiting Human ACCEPT
+**Status:** ✓ ACCEPTED (2026-01-26)
+**Acceptance:** Human accepted all criteria
 
 ---
 
@@ -409,8 +410,8 @@ The framework is now fully self-contained. Everything emerges:
 | Phase | What Emerges | From What | Status |
 |-------|--------------|-----------|---------|
 | Phase 3 | Floor ε | Holography + topology | ✓ ACCEPTED |
-| Phase 4 | Time dt | Striving rate | Awaiting |
-| Phase 5 | Drive D | Floor constraint | Awaiting |
+| Phase 4 | Time dt | Striving rate | ✓ ACCEPTED |
+| Phase 5 | Drive D | Floor constraint | ✓ ACCEPTED |
 
 **Remaining imposed:**
 - Initial conditions ψ(τ=0)
