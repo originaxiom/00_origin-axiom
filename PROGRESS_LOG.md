@@ -311,6 +311,8 @@
 ## Commit History
 
 ```
+[pending] Phase 6_FC: Implement cosmological observables
+9800d66 Phases 4 & 5: Formal acceptance milestone
 09e14b9 Phase 5_FC: Implement emergent drive from floor constraint
 9f48eb3 Update PROGRESS_LOG.md with Phase 4 commit hash
 7e31139 Phase 4_FC: Implement emergent time and causality
@@ -330,17 +332,18 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 
 ## Test Suite Status
 
-**Current:** 169/169 passing
+**Current:** 204/204 passing
 - Phase 0: 31 tests
 - Phase 1: 23 tests
 - Phase 2: 33 tests
 - Phase 3: 32 tests
 - Phase 4: 33 tests
 - Phase 5: 17 tests
-- Coverage: manifold, field, dynamics, geometry, floor derivation, emergent time, emergent drive, full integration
+- Phase 6: 35 tests (22 unit + 13 integration)
+- Coverage: manifold, field, dynamics, geometry, floor derivation, emergent time, emergent drive, cosmological observables, full integration
 - All reproducible with fixed seeds
 
-**Last verified:** 2026-01-26 (Phase 5 complete)
+**Last verified:** 2026-01-26 (Phase 6 complete)
 
 ---
 
@@ -417,5 +420,59 @@ The framework is now fully self-contained. Everything emerges:
 - Initial conditions ψ(τ=0)
 - Parameters γ, ω, K
 - Topology (manifold structure)
+
+---
+
+### Phase 6_FC: Cosmological Observables
+
+**Action:** Extracted cosmological observables from frustrated dynamics
+**Who:** Claude
+**Approved:** [Pending Human ACCEPT]
+**Date:** 2026-01-26
+
+**Files created:**
+- `phase6_fc/CONTRACT.md` (~580 lines) — Phase 6 specification
+- `phase6_fc/cosmology.py` (485 lines) — CosmologicalObservables class
+- `phase6_fc/RESULTS.md` (300+ lines) — Results and analysis
+- `phase6_fc/__init__.py` — Package interface
+- `tests/test_cosmological_observables.py` (400+ lines, 22 tests)
+- `tests/test_integration_phase6.py` (370+ lines, 13 tests)
+- `experiments/phase6_acceptance_test.py` — Reproducible acceptance test
+
+**Core implementation:**
+- Energy density: ρ = ⟨|∂ψ/∂τ|²⟩
+- Hubble parameter: H from Friedmann and kinematic
+- Scale factor: a from amplitude/correlation/volume
+- Equation of state: w = P/ρ
+- Full evolution pipeline with observable extraction
+
+**Test results:**
+- 204/204 tests passing (169 + 35 new Phase 6 tests)
+- All acceptance criteria met
+
+**Observed results (seed=20260126, N=64, 100 steps):**
+- Energy density: ρ ≈ 1.04 (positive, bounded)
+- Scale factor: a decreases 8.34% (contracting)
+- Hubble parameter: H ≈ 1.02 (positive from Friedmann)
+- Equation of state: w = 1/3 (radiation-like, isotropic assumption)
+- Acceleration: ä > 0 (but contracting, not expanding)
+
+**Key finding:**
+> Observable extraction works successfully—can compute H, a, w, ρ from
+> frustrated dynamics. However, current implementation produces w = +1/3
+> (radiation-like) not w ≈ -1 (dark energy-like), and shows contraction
+> not expansion. Framework demonstrates technical capability but does not
+> yet match observed cosmology. Need to: (1) derive pressure from dynamics,
+> (2) explore parameter space, (3) consider spatial drive variation.
+
+**Honest assessment:**
+> Phase 6 succeeds at technical goal (extract observables) but fails at
+> physical goal (match observations). This is progress—we now know what
+> needs fixing. The machinery works; the physics needs refinement.
+
+**Commit:** [To be filled]
+
+**Status:** ✓ Code complete, tests passing, evidence documented
+**Acceptance:** Awaiting Human ACCEPT
 
 ---
