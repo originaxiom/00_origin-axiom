@@ -1,8 +1,9 @@
 # Phase 1_FC Contract: Frustrated Dynamics
 
-**Status:** ACTIVE
+**Status:** ✓ ACCEPTED
 **Version:** v1.0
 **Date:** 2026-01-25
+**Accepted:** 2026-01-26
 
 ---
 
@@ -294,14 +295,14 @@ Phase 2 depends on Phase 1 passing all tests.
 
 Phase 1 is **accepted** when:
 
-1. All code written and passes tests
-2. Floor enforcement verified (0% violations)
-3. Drive necessity demonstrated (with/without comparison)
-4. Reviewed and explicitly approved
+1. All code written and passes tests ✓
+2. Floor enforcement verified (0% violations) ✓
+3. Drive necessity demonstrated (with/without comparison) ✓
+4. Reviewed and explicitly approved ✓
 
-Until then: **provisional**.
+**Status:** ✓ ACCEPTED (2026-01-26)
 
 ---
 
-**Contract status:** ACTIVE
-**Last updated:** 2026-01-25
+**Contract status:** ✓ ACCEPTED
+**Last updated:** 2026-01-26
