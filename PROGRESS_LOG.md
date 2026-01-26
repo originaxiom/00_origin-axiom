@@ -415,6 +415,7 @@ The framework is now fully self-contained. Everything emerges:
 | Phase 3 | Floor ε | Holography + topology | ✓ ACCEPTED |
 | Phase 4 | Time dt | Striving rate | ✓ ACCEPTED |
 | Phase 5 | Drive D | Floor constraint | ✓ ACCEPTED |
+| Phase 6 | Observables (H, a, w, ρ) | Frustrated dynamics | ✓ ACCEPTED |
 
 **Remaining imposed:**
 - Initial conditions ψ(τ=0)
@@ -427,7 +428,7 @@ The framework is now fully self-contained. Everything emerges:
 
 **Action:** Extracted cosmological observables from frustrated dynamics
 **Who:** Claude
-**Approved:** [Pending Human ACCEPT]
+**Approved:** ACCEPTED (2026-01-26)
 **Date:** 2026-01-26
 
 **Files created:**
@@ -470,9 +471,9 @@ The framework is now fully self-contained. Everything emerges:
 > physical goal (match observations). This is progress—we now know what
 > needs fixing. The machinery works; the physics needs refinement.
 
-**Commit:** [To be filled]
+**Commit:** d54df76
 
-**Status:** ✓ Code complete, tests passing, evidence documented
-**Acceptance:** Awaiting Human ACCEPT
+**Status:** ✓ ACCEPTED
+**Acceptance:** Formally accepted 2026-01-26
 
 ---

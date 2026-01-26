@@ -1,8 +1,9 @@
 # Phase 6_FC Contract: Cosmological Observables
 
-**Status:** ACTIVE
+**Status:** ACCEPTED
 **Version:** v1.0
 **Date:** 2026-01-26
+**Accepted:** 2026-01-26
 
 ---
 
