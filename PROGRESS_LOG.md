@@ -149,21 +149,71 @@
 
 ---
 
-## Next: Phase 2_FC (Emergent Geometry)
+### Phase 2_FC: Emergent Geometry
+
+**Action:** Extracted geometric structure from frustration field
+**Who:** Claude
+**Approved:** [Pending Human ACCEPT]
+**Date:** 2026-01-26
+
+**Files created:**
+- `phase2_fc/CONTRACT.md` (350 lines) — Phase 2 specification
+- `phase2_fc/geometry.py` (390 lines) — EmergentGeometry class
+- `phase2_fc/RESULTS.md` (260 lines) — Numerical results and findings
+- `phase2_fc/__init__.py` — Package interface
+- `tests/test_emergent_geometry.py` (12 tests)
+- `tests/test_geometry_measures.py` (13 tests)
+- `tests/test_integration_phase2.py` (8 tests)
+- `experiments/phase2_acceptance_test.py` — Reproducible acceptance test
+
+**Core implementation:**
+- Three distance measures (amplitude, phase, hybrid)
+- Dimension estimation via correlation dimension
+- Curvature estimation via discrete Laplacian
+- Distance matrix computation (neighbors/sample/full modes)
+
+**Test results:**
+- 87/87 tests passing (31 Phase 0 + 23 Phase 1 + 33 Phase 2)
+- No failures, 2 warnings (expected from degenerate cases)
+
+**Observed results (seed=20260126, N=125):**
+- Emergent dimension: D ≈ 1.35
+- Topology dimension: 3 (cubic 3D)
+- Mean curvature: R ≈ 0.004
+- Curvature range: [-2.26, 0.92]
+- Distance symmetry error: < 1e-10
+- All measures finite and bounded
+
+**Key finding:**
+> Emergent dimension D ≈ 1.35 differs significantly from topology dimension (3).
+> This demonstrates that ψ field modifies effective geometry — geometry emerges
+> from field structure, not vice versa.
+
+**Commit:** `543ce21` — Phase 2_FC: Implement emergent geometry
+
+**Status:** ✓ Code complete, tests passing, evidence documented
+**Acceptance:** Awaiting Human ACCEPT
+
+---
+
+## Next: Phase 3_FC (Floor Derivation)
 
 **Planned:**
-- Distance measure from ψ correlations
-- Metric extraction: g_μν from field
-- Dimension estimation
-- Curvature estimate
+- Holographic floor derivation
+- Information-theoretic bounds
+- Topological constraints
+- Replace hard floor with derived floor
 
-**Status:** Phase 1 ACCEPTED — Ready to proceed with Phase 2
+**Status:** Phase 2 complete — Ready to proceed after Human ACCEPT
 
 ---
 
 ## Commit History
 
 ```
+543ce21 Phase 2_FC: Implement emergent geometry
+e0a5b29 Phase 1_FC: Formal acceptance milestone
+1b7f925 Add PROGRESS_LOG.md for chronological work tracking
 fdcb70d Phase 1_FC: Add evidence artifacts and results log
 278d8c3 Phase 1_FC: Implement frustrated dynamics
 0b46ddd Polish documentation for professional presentation
@@ -175,10 +225,11 @@ aae87c6 Initial commit: Repository bootstrap (Rung 0.1)
 
 ## Test Suite Status
 
-**Current:** 54/54 passing
+**Current:** 87/87 passing
 - Phase 0: 31 tests
 - Phase 1: 23 tests
-- Coverage: manifold, field, dynamics, integration
+- Phase 2: 33 tests
+- Coverage: manifold, field, dynamics, geometry, integration
 - All reproducible with fixed seeds
 
 **Last verified:** 2026-01-26
