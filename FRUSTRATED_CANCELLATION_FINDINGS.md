@@ -1,8 +1,28 @@
 # Frustrated Cancellation Framework: Comprehensive Findings
 
+⚠️ **OUTDATED DOCUMENT - Phase 6 Original Assessment** ⚠️
+
+**This document reflects the Phase 6 ORIGINAL assessment (Jan 26, 2026) which concluded the framework failed with w = +1/3. This conclusion was SUPERSEDED by subsequent discoveries:**
+
+- **Phase 7 (Jan 26):** Breakthrough discovery - proper pressure derivation gives w ≈ -1
+- **Phase 6 Revised (Jan 26):** Framework corrected, now achieves dark energy behavior
+- **Phase 8 (Jan 27):** Observational validation shows χ²/dof = 1.52 (marginally viable)
+
+**For current status, see:**
+- [README.md](README.md) - Current overview (Phase 8 complete, framework viable)
+- [STATUS_SNAPSHOT.md](STATUS_SNAPSHOT.md) - Current state snapshot
+- [PHASE6_REVISION_SUMMARY.md](PHASE6_REVISION_SUMMARY.md) - How the error was corrected
+- [phase8_fc/RESULTS.md](phase8_fc/RESULTS.md) - Latest observational comparison
+
+**This document is preserved for historical accuracy, showing the scientific process of finding and correcting errors.**
+
+---
+
+# Original Assessment (SUPERSEDED)
+
 **Date:** 2026-01-26
-**Status:** Research Complete - Framework Evaluated
-**Verdict:** Mathematically coherent, observationally incompatible
+**Status:** Research Complete - Framework Evaluated (OUTDATED)
+**Verdict:** Mathematically coherent, observationally incompatible (NO LONGER TRUE)
 
 ---
 
