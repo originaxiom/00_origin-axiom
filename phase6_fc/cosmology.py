@@ -54,14 +54,14 @@ class CosmologicalObservables:
 
     def compute_energy_density(self,
                                psi: np.ndarray,
-                               psi_dot: np.ndarray) -> float:
+                               psi_dot: np.ndarray,
+                               include_spatial: bool = False,
+                               V: float = 0.0) -> float:
         """
-        Compute spatial-average energy density from striving.
+        Compute spatial-average energy density.
 
-        ρ(τ) = ⟨|∂ψ/∂τ|²⟩
-
-        Energy emerges from the rate of cancellation attempt.
-        Spatial average over manifold.
+        Simple (Phase 6 original): ρ = ⟨|∂ψ/∂τ|²⟩
+        Proper (stress-energy): ρ = ⟨|∂ψ/∂τ|²⟩ + ⟨|∇ψ|²⟩ + V
 
         Parameters
         ----------
@@ -69,57 +69,124 @@ class CosmologicalObservables:
             Current field state
         psi_dot : np.ndarray, shape (N,)
             Field time derivative ∂ψ/∂τ
+        include_spatial : bool
+            If True, include spatial gradients and potential
+        V : float
+            Potential energy density
 
         Returns
         -------
         rho : float
             Energy density (spatial average)
         """
-        # Energy from striving: |∂ψ/∂τ|²
-        local_energy = np.abs(psi_dot) ** 2
+        # Temporal kinetic energy: |∂ψ/∂τ|²
+        K_t = np.abs(psi_dot) ** 2
+
+        if include_spatial:
+            # Spatial kinetic energy: |∇ψ|²
+            K_s = self.compute_spatial_gradients(psi)
+            # Total: ρ = K_t + K_s + V
+            local_energy = K_t + K_s + V
+        else:
+            # Simple (original Phase 6): just temporal kinetic
+            local_energy = K_t
 
         # Spatial average
         rho = np.mean(local_energy)
 
         return float(rho)
 
+    def compute_spatial_gradients(self, psi: np.ndarray) -> np.ndarray:
+        """
+        Compute spatial gradients |∇ψ|² on discrete manifold.
+
+        Uses finite differences along adjacency structure.
+
+        Parameters
+        ----------
+        psi : np.ndarray
+            Field values at nodes
+
+        Returns
+        -------
+        grad_squared : np.ndarray
+            |∇ψ|² at each node
+        """
+        adjacency = self.manifold.adjacency
+        grad_squared = np.zeros(self.N)
+
+        for i in range(self.N):
+            neighbors = adjacency[i]
+            if len(neighbors) > 0:
+                # Average gradient to neighbors
+                grad_sum = 0.0
+                for j in neighbors:
+                    # Finite difference
+                    diff = psi[j] - psi[i]
+                    grad_sum += np.abs(diff)**2
+                grad_squared[i] = grad_sum / len(neighbors)
+
+        return grad_squared
+
     def compute_pressure(self,
                         psi: np.ndarray,
                         psi_dot: np.ndarray,
-                        method: str = 'isotropic') -> float:
+                        method: str = 'isotropic',
+                        V: float = 0.0) -> float:
         """
         Compute pressure from field dynamics.
 
-        For isotropic case: P = (1/3)⟨|∂ψ/∂τ|²⟩
-        (Standard relativistic fluid relation for radiation-like)
+        Methods:
+        - 'isotropic': P = (1/3)ρ (WRONG - gives w = +1/3)
+        - 'proper': P = K_t - K_s - V from stress-energy tensor (CORRECT)
+        - 'trace': P = 0 (matter-like)
+
+        Proper derivation from T^μν:
+          ρ = K_t + K_s + V
+          P = K_t - K_s - V
+        where K_t = ⟨|∂_t ψ|²⟩, K_s = ⟨|∇ψ|²⟩
 
         Parameters
         ----------
         psi : np.ndarray
             Current field state
         psi_dot : np.ndarray
-            Field derivative
+            Field derivative ∂ψ/∂t
         method : str
-            'isotropic': P = ρ/3
-            'trace': P from stress tensor trace
+            Pressure computation method
+        V : float
+            Potential energy density (default 0)
 
         Returns
         -------
         P : float
             Pressure
         """
-        rho = self.compute_energy_density(psi, psi_dot)
-
         if method == 'isotropic':
-            # Isotropic approximation: P = ρ/3
-            # (This assumes relativistic, pressure-like behavior)
+            # DEPRECATED: Isotropic approximation P = ρ/3
+            # This was the Phase 6 error - gives w = +1/3 always
+            rho = self.compute_energy_density(psi, psi_dot)
             P = rho / 3.0
+
+        elif method == 'proper':
+            # CORRECT: Proper pressure from stress-energy tensor
+            # For complex scalar field in flat spacetime:
+            #   T^00 = |∂_t ψ|² + |∇ψ|² + V    (energy density)
+            #   T^ii = |∂_t ψ|² - |∇ψ|² - V    (diagonal stress)
+            #   P = (1/3) Tr(T^ii) = |∂_t ψ|² - |∇ψ|² - V
+
+            K_t = np.abs(psi_dot)**2  # Temporal kinetic energy
+            K_s = self.compute_spatial_gradients(psi)  # Spatial kinetic energy
+
+            # Pressure: P = K_t - K_s - V
+            # Negative K_s and V contribute to negative pressure (dark energy!)
+            P_local = K_t - K_s - V
+            P = np.mean(P_local)
+
         elif method == 'trace':
-            # From stress tensor trace
-            # For scalar field: P ≈ (kinetic - potential)
-            # Here: P ≈ ρ - 2V where V ~ floor constraint energy
-            # Simplified: P ≈ 0 (matter-like) for now
+            # Trace method: P = 0 (matter-like, non-relativistic)
             P = 0.0
+
         else:
             raise ValueError(f"Unknown pressure method: {method}")
 
@@ -353,7 +420,8 @@ class CosmologicalObservables:
                         use_emergent_drive: bool = True,
                         control_gain: float = 1.0,
                         scale_method: str = 'amplitude',
-                        pressure_method: str = 'isotropic') -> Dict[str, np.ndarray]:
+                        pressure_method: str = 'proper',
+                        V: float = 0.0) -> Dict[str, np.ndarray]:
         """
         Evolve system and track cosmological observables.
 
@@ -381,7 +449,10 @@ class CosmologicalObservables:
         scale_method : str
             Method for scale factor computation
         pressure_method : str
-            Method for pressure computation
+            Method for pressure computation ('isotropic' or 'proper')
+            Default 'proper' uses stress-energy tensor (Phase 7B breakthrough)
+        V : float
+            Potential energy density (default 0.0)
 
         Returns
         -------
@@ -421,8 +492,8 @@ class CosmologicalObservables:
 
         # Initial observables
         psi_dot = self.compute_derivative(psi, gamma, omega, initial_drive)
-        rho = self.compute_energy_density(psi, psi_dot)
-        pressure = self.compute_pressure(psi, psi_dot, method=pressure_method)
+        rho = self.compute_energy_density(psi, psi_dot, include_spatial=(pressure_method=='proper'), V=V)
+        pressure = self.compute_pressure(psi, psi_dot, method=pressure_method, V=V)
         a = self.compute_scale_factor(psi, method=scale_method,
                                       normalize_to=a_initial)
         w = self.compute_equation_of_state(rho, pressure)
@@ -474,8 +545,8 @@ class CosmologicalObservables:
             t_physical += dt_physical
 
             # Compute observables
-            rho = self.compute_energy_density(psi_new, psi_dot)
-            pressure = self.compute_pressure(psi_new, psi_dot, method=pressure_method)
+            rho = self.compute_energy_density(psi_new, psi_dot, include_spatial=(pressure_method=='proper'), V=V)
+            pressure = self.compute_pressure(psi_new, psi_dot, method=pressure_method, V=V)
             a_new = self.compute_scale_factor(psi_new, method=scale_method,
                                              normalize_to=a_initial)
             w = self.compute_equation_of_state(rho, pressure)
