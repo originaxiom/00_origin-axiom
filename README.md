@@ -1,3 +1,13 @@
+> **This repository is superseded and archived.**
+>
+> The Origin Axiom project has been consolidated into a single canonical repository:
+> **https://github.com/originaxiom/origin-axiom**
+>
+> This repo is preserved read-only as part of the project history. See AUDIT_REPORT.md
+> and PROVENANCE.md in the canonical repository for how this work was reconciled.
+
+---
+
 # 00_origin-axiom: Frustrated Cancellation Dynamics
 
 **Status:** Research Complete - Framework Evaluated (2026-01-26)
